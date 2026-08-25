@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bs5bqfvw4jkw0"]
+
+[ext_resource type="Texture2D" uid="uid://cg2oo3vh5dkuk" path="res://background.jpg" id="1_klylv"]
+[ext_resource type="Script" uid="uid://d0or0adff42we" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+
+[node name="TitleScreen" type="Node2D" unique_id=171160968]
+script = ExtResource("1_p3fck")
+
+[node name="Background" type="TextureRect" parent="." unique_id=369383886]
+offset_left = 13.0
+offset_right = 1213.0
+offset_bottom = 789.0
+scale = Vector2(0.95233697, 0.8286357)
+texture = ExtResource("1_klylv")
+
+[node name="Title" type="Label" parent="." unique_id=1626905396]
+offset_left = 136.0
+offset_top = 1.0
+offset_right = 1052.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 108
+text = "Catch Yo Ramen!!
+             🍜"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1089833094]
+offset_left = 446.0
+offset_top = 314.0
+offset_right = 788.0
+offset_bottom = 624.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=544792873]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Start game "
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1097399326]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Settings
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1879427932]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
