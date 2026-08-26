@@ -18,4 +18,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if main_level.has_method("garlic_collect"):
 			main_level.garlic_collect(name)
 
-		queue_free()
+		call_deferred("queue_free")

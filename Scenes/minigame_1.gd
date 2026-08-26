@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var themed_timer = get_node_or_null("ThemedTimer")
 var garlic_collected: int = 0
 var total_garlic: int = 4
 

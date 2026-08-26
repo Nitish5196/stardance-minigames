@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kqmu8h03s75p" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="Texture2D" uid="uid://d3bxbadhl6srt" path="res://bg3.1.jpg" id="1_11mgy"]
+[ext_resource type="PackedScene" uid="uid://c7apygltbmn4c" path="res://Scenes/themed_timer.tscn" id="2_0uv5o"]
 [ext_resource type="PackedScene" uid="uid://c76gua3ni2ddy" path="res://Scenes/player.tscn" id="2_11mgy"]
 [ext_resource type="Script" uid="uid://5lrhoebwrsbj" path="res://Scenes/garlic.gd" id="3_o6yob"]
 [ext_resource type="Texture2D" uid="uid://ckluymjelg6gh" path="res://foodyum.png" id="4_5txvl"]
@@ -60,6 +61,9 @@ radius = 62.1289
 
 [node name="minigame_1" type="Node2D" unique_id=73282470]
 script = ExtResource("1_5txvl")
+
+[node name="ThemedTimer" parent="." unique_id=372672545 instance=ExtResource("2_0uv5o")]
+position = Vector2(40, 50)
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1611103705]
 repeat_size = Vector2(1000, 0)
