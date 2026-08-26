@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://o8dedvcsikyd"]
+
+[ext_resource type="Script" uid="uid://b43mclxvh2r61" path="res://Scenes/theamedtimer.gd" id="1_3id1k"]
+
+[node name="Node2D" type="Node2D" unique_id=372672545]
+script = ExtResource("1_3id1k")
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=370160046]
+offset_right = 40.0
+offset_bottom = 40.0

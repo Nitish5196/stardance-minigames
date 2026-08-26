@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bd1wyodop66pl"]
+
+[ext_resource type="Texture2D" uid="uid://d3bxbadhl6srt" path="res://bg3.1.jpg" id="1_11mgy"]
+[ext_resource type="PackedScene" uid="uid://c76gua3ni2ddy" path="res://Scenes/player.tscn" id="2_11mgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap0sh"]
+size = Vector2(1167.9431, 107.52612)
+
+[node name="minigame_1" type="Node2D" unique_id=73282470]
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1611103705]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=2118726174]
+offset_top = 1.0
+offset_right = 1024.0
+offset_bottom = 560.0
+scale = Vector2(1.1172234, 1)
+texture = ExtResource("1_11mgy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=178510874]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=114431557]
+offset_left = -30.0
+offset_top = 558.0
+offset_right = -7.955475
+offset_bottom = 558.25006
+scale = Vector2(58.42722, 375.96832)
+color = Color(0.8745098, 0.3019608, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1775452496]
+position = Vector2(589.12604, 611.5)
+scale = Vector2(1.0101074, 0.9765069)
+shape = SubResource("RectangleShape2D_ap0sh")
+
+[node name="Player" parent="." unique_id=650593590 instance=ExtResource("2_11mgy")]
+position = Vector2(198, 526)

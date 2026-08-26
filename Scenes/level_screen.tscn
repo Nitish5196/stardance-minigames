@@ -1,3 +1,50 @@
 [gd_scene format=3 uid="uid://cjno74uhup4y1"]
 
+[ext_resource type="Texture2D" uid="uid://da4to4pva2jk" path="res://bg2.jpg" id="1_6yjli"]
+[ext_resource type="Script" uid="uid://vfxqq5epu3eo" path="res://Scenes/timer_screen.gd" id="1_glb20"]
+[ext_resource type="Texture2D" uid="uid://ckluymjelg6gh" path="res://foodyum.png" id="2_glb20"]
+
 [node name="LevelScreen" type="Node2D" unique_id=1299161867]
+script = ExtResource("1_glb20")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1750196824]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.90013474, 0.8249065)
+texture = ExtResource("1_6yjli")
+
+[node name="RamenContainer" type="HBoxContainer" parent="." unique_id=1408846762]
+offset_left = 75.0
+offset_top = 108.0
+offset_right = 1070.0
+offset_bottom = 437.0
+
+[node name="Ramen1" type="TextureRect" parent="RamenContainer" unique_id=781181693]
+layout_mode = 2
+texture = ExtResource("2_glb20")
+
+[node name="Ramen2" type="TextureRect" parent="RamenContainer" unique_id=1381544377]
+layout_mode = 2
+texture = ExtResource("2_glb20")
+
+[node name="Ramen3" type="TextureRect" parent="RamenContainer" unique_id=1739261892]
+layout_mode = 2
+texture = ExtResource("2_glb20")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=782837383]
+offset_left = 198.0
+offset_top = 99.0
+offset_right = 370.0
+offset_bottom = 168.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level#"
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=1628851060]
+offset_left = 854.0
+offset_top = 100.0
+offset_right = 1007.0
+offset_bottom = 175.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"

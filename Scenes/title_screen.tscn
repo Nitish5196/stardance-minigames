@@ -1,26 +1,27 @@
 [gd_scene format=3 uid="uid://bs5bqfvw4jkw0"]
 
-[ext_resource type="Texture2D" uid="uid://cg2oo3vh5dkuk" path="res://background.jpg" id="1_klylv"]
 [ext_resource type="Script" uid="uid://d0or0adff42we" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+[ext_resource type="Texture2D" uid="uid://cv8lj73ldy3vx" path="res://bg1.png" id="2_p3fck"]
 
 [node name="TitleScreen" type="Node2D" unique_id=171160968]
 script = ExtResource("1_p3fck")
 
 [node name="Background" type="TextureRect" parent="." unique_id=369383886]
 offset_left = 13.0
-offset_right = 1213.0
-offset_bottom = 789.0
-scale = Vector2(0.95233697, 0.8286357)
-texture = ExtResource("1_klylv")
+offset_right = 1371.0
+offset_bottom = 784.0
+scale = Vector2(0.83984745, 0.8225962)
+texture = ExtResource("2_p3fck")
 
 [node name="Title" type="Label" parent="." unique_id=1626905396]
-offset_left = 136.0
-offset_top = 1.0
-offset_right = 1052.0
-offset_bottom = 300.0
+offset_left = 183.0
+offset_right = 1099.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(1, 0.6862745, 0.011764706, 1)
+theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 108
 text = "Catch Yo Ramen!!
-             🍜"
+             "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1089833094]
 offset_left = 446.0
