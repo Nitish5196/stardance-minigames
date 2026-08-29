@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://casafaekamgim"]
 
 [ext_resource type="Texture2D" uid="uid://d3bxbadhl6srt" path="res://bg3.1.jpg" id="1_4g1yq"]
-[ext_resource type="Script" uid="uid://b43mclxvh2r61" path="res://Scenes/theamedtimer.gd" id="1_r8ahl"]
+[ext_resource type="Script" uid="uid://dps7dnmqd28cq" path="res://minigame_2.gd" id="1_r8ahl"]
 [ext_resource type="Texture2D" uid="uid://ckluymjelg6gh" path="res://foodyum.png" id="3_xphvp"]
 [ext_resource type="Script" uid="uid://cil0e50mf0hof" path="res://button_1.gd" id="4_anotr"]
 [ext_resource type="PackedScene" uid="uid://c7apygltbmn4c" path="res://Scenes/themed_timer.tscn" id="5_elgba"]
@@ -47,28 +47,41 @@ scale = Vector2(1.0101074, 0.97650695)
 shape = SubResource("RectangleShape2D_hse73")
 
 [node name="Button_1" type="TextureButton" parent="." unique_id=2030581804]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 240.0
+offset_top = -128.0
+offset_right = 569.0
+offset_bottom = 201.0
 texture_normal = ExtResource("3_xphvp")
 script = ExtResource("4_anotr")
 
 [node name="Button_2" type="TextureButton" parent="." unique_id=1578174027]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -10.0
+offset_top = 252.0
+offset_right = 319.0
+offset_bottom = 581.0
 texture_normal = ExtResource("3_xphvp")
 script = ExtResource("4_anotr")
 
 [node name="Button_3" type="TextureButton" parent="." unique_id=1703236931]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 807.0
+offset_top = -79.0
+offset_right = 1136.0
+offset_bottom = 250.0
 texture_normal = ExtResource("3_xphvp")
 script = ExtResource("4_anotr")
 
 [node name="Button_4" type="TextureButton" parent="." unique_id=1104651375]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 643.0
+offset_top = 246.0
+offset_right = 972.0
+offset_bottom = 575.0
 texture_normal = ExtResource("3_xphvp")
 script = ExtResource("4_anotr")
 
 [node name="ThemedTimer" parent="." unique_id=372672545 instance=ExtResource("5_elgba")]
-position = Vector2(848, 203)
+position = Vector2(87, 63)
+
+[connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
+[connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
+[connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
+[connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]

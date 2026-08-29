@@ -8,5 +8,9 @@ script = ExtResource("1_moll0")
 [node name="timer" type="RichTextLabel" parent="." unique_id=370160046]
 offset_left = 10.0
 offset_top = -2.0
-offset_right = 50.0
-offset_bottom = 38.0
+offset_right = 110.0
+offset_bottom = 98.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+text = "0.0"

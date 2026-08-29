@@ -17,7 +17,7 @@ size = Vector2(419.75735, 25.601477)
 size = Vector2(424.7073, 31.74587)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q66kf"]
-size = Vector2(102, 656)
+size = Vector2(87, 656)
 
 [sub_resource type="Animation" id="Animation_0uv5o"]
 loop_mode = 2
@@ -61,9 +61,6 @@ radius = 62.1289
 
 [node name="minigame_1" type="Node2D" unique_id=73282470]
 script = ExtResource("1_5txvl")
-
-[node name="ThemedTimer" parent="." unique_id=372672545 instance=ExtResource("2_0uv5o")]
-position = Vector2(40, 50)
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1611103705]
 repeat_size = Vector2(1000, 0)
@@ -150,7 +147,7 @@ shape = SubResource("RectangleShape2D_q66kf")
 [node name="RIGHTWALL" type="StaticBody2D" parent="." unique_id=812854530]
 
 [node name="rightwall" type="CollisionShape2D" parent="RIGHTWALL" unique_id=1337026145]
-position = Vector2(1194, 322)
+position = Vector2(1201.5, 322)
 shape = SubResource("RectangleShape2D_q66kf")
 
 [node name="Garlic" type="Node2D" parent="." unique_id=1726351797]
@@ -243,6 +240,8 @@ position = Vector2(271, 231)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic4/Area2D" unique_id=663670963]
 position = Vector2(76, 39)
 shape = SubResource("CircleShape2D_sliqm")
+
+[node name="ThemedTimer" parent="." unique_id=372672545 instance=ExtResource("2_0uv5o")]
 
 [connection signal="body_entered" from="Garlic/Area2D" to="Garlic" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Garlic3/Area2D" to="Garlic3" method="_on_area_2d_body_entered"]

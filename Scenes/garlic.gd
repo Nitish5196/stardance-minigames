@@ -1,21 +1,15 @@
 extends Node2D
+@onready var player: CharacterBody2D = $"../Player" # grabs the parent node
+@onready var self_area = $Area2D
+@onready var player_area = $"../Player/Area2D"
 
-var collected := false
+# make a signal
+signal garlic_collected
 
-func _ready() -> void:
-	# If this ramen was collected during an earlier attempt,
-	# don't show it again.
-	if Global.collected_garlic.has(name):
-		queue_free()
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and not collected:
-		collected = true
-
-		var main_level = get_tree().current_scene
-
-		if main_level.has_method("garlic_collect"):
-			main_level.garlic_collect(name)
-
-		call_deferred("queue_free")
+func _process(delta: float) -> void: # this runs EVERY FRAME! 
+	
+	if player_area.overlaps_area(self_area): # checks if overlapping
+		if self.visible:
+			emit_signal("garlic_collected") #signal broadcast
+			self.hide() #removed from player sight; collected
+		

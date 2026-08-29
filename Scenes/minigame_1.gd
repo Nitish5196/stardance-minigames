@@ -1,74 +1,37 @@
 extends Node2D
+@onready var themed_timer: Node2D = $ThemedTimer 
+# ^^^ You dragged this in the scene by the way 
 
-@onready var themed_timer = get_node_or_null("ThemedTimer")
-var garlic_collected: int = 0
-var total_garlic: int = 4
 
-var time_left: float = 15.0
-var game_finished := false
 
+var garlic_collected = 0 # just keeping track of garlic collected
+var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
-	garlic_collected = Global.collected_garlic.size()
 
-	print("Ramen: ", garlic_collected, "/", total_garlic)
-	print("Time: ", time_left)
-
-
-func _process(delta: float) -> void:
-	if game_finished:
-		return
-
-	time_left -= delta
-
-	if time_left <= 0.0:
-		time_left = 0.0
-		lose_minigame()
+		#Below you can see that I have a function that I named. I grab a 
+		#function from it that was created in it's script and use `await` to 
+		# tell the script to wait for a signal, or for when a function finshes
 
 
-func garlic_collect(garlic_name: String) -> void:
-	if game_finished:
-		return
+	await themed_timer.Timer(10.0) #accessing a function from this node
+	#after this is compeleted...
+	timer_end = true # now we're saying "oh ye you ran out of time"
 
-	if not Global.collected_garlic.has(garlic_name):
-		Global.collected_garlic.append(garlic_name)
+func _process(delta: float) -> void: # running every frame brochacho
+	
+	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
+		if Global.minigames_done > 3: # we access a global script and see how many minigames have been compeleted
+			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
+		else:
+			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # go back to the intermission scene
+	
+	if timer_end: # if the timer does end...
+		Global.minigames_done -=1 #go back a minigame
+		Global.lives -= 1 # lose ur lives
+		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # back to intermission
+		
 
-	garlic_collected = Global.collected_garlic.size()
-
-	print("Ramen: ", garlic_collected, "/", total_garlic)
-
-	if garlic_collected >= total_garlic:
-		win_minigame()
-
-
-func win_minigame() -> void:
-	game_finished = true
-
-	print("YOU WIN!")
-
-	# NOW we say that the minigame was completed.
-	Global.minigames_done += 1
-
-	# Clear the collected ramen because we're moving
-	# to a completely new minigame.
-	Global.collected_garlic.clear()
-
-	get_tree().change_scene_to_file("res://Scenes/Timer_screen.tscn")
-
-
-func lose_minigame() -> void:
-	game_finished = true
-
-	print("TIME'S UP!")
-
-	Global.lives -= 1
-
-	print("Lives: ", Global.lives)
-
-	if Global.lives <= 0:
-		print("GAME OVER")
-		get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
-	else:
-		# DO NOT clear collected_garlic.
-		# The collected ramen will stay gone when we retry.
-		get_tree().change_scene_to_file("res://Scenes/Timer_screen.tscn")
+func garlic_collect() -> void: # cool function that you connect to those garlics
+	garlic_collected = garlic_collected +1
+	return
