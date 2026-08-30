@@ -19,4 +19,4 @@ func _process(delta: float) -> void:
 	if timer_end:
 		Global.lives -= 1
 		Global.minigames_done -= 1
-		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn") # or level_screen.tscn
+		get_tree().change_scene_to_file("res://Scenes/level_screen.tscn") # or level_screen.tscn
