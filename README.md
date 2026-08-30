@@ -2,7 +2,7 @@ Catch Yo Ramen <img width="329" height="329" alt="foodyum" src="https://github.c
 It is a minigame built using Godot Engine and coded in GDscript , its main goal is to catch the Ramen hence its name 
 when u load the minigame you are greeted with 3 options :-
 1.Start Game - which takes u to the level screen where your ramen(hearts/lives) is displayed and a 5sec timer starts running , once the timerr ends you are taken to the first level Minigame_1
-2.Settings - which for now does nothing except prints " Settings click" more functions will be added to it in the future (such as muting the background music, choosing your charecter,etc)
+2.Settings -when click opens a settings window where you can mute/unmute the background music and close the settings window.more functions will be added to it in the future (for example:choosing your charecter)
 3.Quit- which as the name suggests quits the game 
 In the minigame one there are 4 ramens waiting for u to catch/collect them you got 10secs before you are taken back to the level screen and lose a heart and redirected to minigame 1 
 you have to get on the different platforms to collect the ramens and u got exactly 10secs to do it
