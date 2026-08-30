@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kg3vv12ihlym"]
 
-[ext_resource type="Script" uid="uid://dps7dnmqd28cq" path="res://minigame_2.gd" id="1_rfxq2"]
+[ext_resource type="Script" uid="uid://dpq06bxotx2p" path="res://Scenes/minigame_2.gd" id="1_rfxq2"]
 [ext_resource type="Texture2D" uid="uid://d3bxbadhl6srt" path="res://bg3.1.jpg" id="2_mmgun"]
 [ext_resource type="Texture2D" uid="uid://ckluymjelg6gh" path="res://foodyum.png" id="3_h684j"]
 [ext_resource type="Script" uid="uid://cil0e50mf0hof" path="res://button_1.gd" id="4_wu6l1"]
